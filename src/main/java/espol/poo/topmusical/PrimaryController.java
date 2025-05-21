@@ -13,6 +13,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import modelo.Cancion;
+import java.util.Arrays;
+
 
 public class PrimaryController {
 
@@ -28,10 +30,11 @@ public class PrimaryController {
     private Label lblInfo;
     
     private static ArrayList<Cancion> listaCanciones;
-
+    
     public void initialize() {
         listaCanciones = Cancion.leerCanciones();
         Collections.sort(listaCanciones);
+        Collections.reverse(listaCanciones);
         for (Cancion c : listaCanciones ) {
 
             HBox hb = new HBox(10);//hbox para ubicar info de cada cancion
